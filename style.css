@@ -4,22 +4,25 @@
    ============================================================ */
 
 :root {
-  --accent: #2f6fb0;
-  --accent-dark: #245789;
-  --accent-soft: rgba(47, 111, 176, 0.08);
-  --accent-softer: rgba(47, 111, 176, 0.04);
-  --bg: #f3f8fc;
+  --accent: #1ea3a0;
+  --accent-dark: #15807d;
+  --accent-deep: #0e5d5b;
+  --accent-soft: rgba(30, 163, 160, 0.08);
+  --accent-softer: rgba(30, 163, 160, 0.04);
+  --bg: #eef9f7;
   --bg-card: #ffffff;
-  --text: #1c3a52;
-  --text-muted: #5a738a;
-  --border: rgba(47, 111, 176, 0.15);
-  --shadow-sm: 0 2px 8px rgba(28, 58, 82, 0.06);
-  --shadow-md: 0 8px 24px rgba(28, 58, 82, 0.10);
-  --shadow-lg: 0 16px 40px rgba(28, 58, 82, 0.14);
+  --text: #1f4044;
+  --text-muted: #5a7376;
+  --coral: #e0615f;
+  --coral-soft: rgba(224, 97, 95, 0.12);
+  --border: rgba(30, 163, 160, 0.15);
+  --shadow-sm: 0 2px 8px rgba(15, 70, 70, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 70, 70, 0.10);
+  --shadow-lg: 0 16px 40px rgba(15, 70, 70, 0.14);
   --whatsapp: #25d366;
   --whatsapp-dark: #1ebe5a;
   --teal: #1ea3a0;
-  --teal-dark: #178682;
+  --teal-dark: #15807d;
   --font-serif: 'Lora', Georgia, serif;
   --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -277,23 +280,24 @@ a:hover { color: var(--accent-dark); }
 .section-accent {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
 }
 
 .section-accent svg {
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 18px;
   fill: var(--accent);
-  opacity: 0.55;
+  opacity: 0.9;
 }
 
 .section-title {
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: clamp(1.6rem, 3.6vw, 2.4rem);
-  color: var(--text);
+  color: var(--accent-deep);
   text-align: center;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 2rem 0;
   line-height: 1.25;
 }
 
@@ -342,44 +346,54 @@ a:hover { color: var(--accent-dark); }
 
 .info-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem 1.75rem;
-  box-shadow: var(--shadow-sm);
+  border: 0;
+  border-radius: 22px;
+  padding: 2rem 2rem 2.25rem;
+  box-shadow: 0 6px 24px rgba(15, 70, 70, 0.07);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .info-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 12px 32px rgba(15, 70, 70, 0.12);
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
 }
 
 .info-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  width: 32px;
+  height: 32px;
+  color: var(--coral);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
 
 .info-icon svg { width: 28px; height: 28px; }
 
 .info-title {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  margin: 0 0 0.75rem 0;
-  color: var(--text);
+  margin: 0;
+  color: var(--accent-deep);
 }
 
 .info-text {
   margin: 0;
-  color: var(--text-muted);
+  color: var(--text);
   line-height: 1.7;
+  font-size: 1rem;
+}
+
+.contact-list dt {
+  color: var(--accent-deep);
 }
 
 .contact-list {
@@ -501,33 +515,58 @@ a:hover { color: var(--accent-dark); }
    DONATION
    ============================================================ */
 .donation-section {
-  background: linear-gradient(180deg, var(--bg) 0%, #e9f1f9 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, #e0f3ef 100%);
+}
+
+.donation-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: -1.25rem 0 2.25rem 0;
 }
 
 .bank-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
 .bank-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.75rem 1.5rem;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
+  position: relative;
+  background: linear-gradient(135deg, #2ebcb1 0%, #1c8a86 100%);
+  border: 0;
+  border-radius: 20px;
+  padding: 1.5rem 1.5rem 1.4rem;
+  color: white;
+  box-shadow: 0 14px 32px rgba(20, 110, 105, 0.28);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bank-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.18) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .bank-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 20px 40px rgba(20, 110, 105, 0.36);
+}
+
+.bank-card-head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .bank-name {
@@ -535,66 +574,97 @@ a:hover { color: var(--accent-dark); }
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--accent);
+  color: white;
+}
+
+.bank-chip {
+  width: 38px;
+  height: 28px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f4cf68 0%, #d4a943 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
+              0 2px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.bank-chip::after {
+  content: "";
+  position: absolute;
+  inset: 4px 6px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 5px,
+    rgba(0, 0, 0, 0.15) 5px 6px
+  );
 }
 
 .bank-number {
+  position: relative;
+  z-index: 1;
   margin: 0;
   font-family: 'IBM Plex Sans', monospace;
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--text);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
   user-select: all;
 }
 
 .copy-btn {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0.75rem 1.5rem;
+  min-height: 46px;
+  padding: 0.65rem 1.25rem;
   width: 100%;
-  max-width: 240px;
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.18);
   color: white;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(4px);
 }
 
-.copy-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
 .copy-btn:active { transform: translateY(0); }
 
-.copy-btn svg { width: 18px; height: 18px; }
+.copy-btn svg { width: 17px; height: 17px; }
 
 .copy-btn.is-copied {
-  background: #2eb872;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--accent-deep);
+  border-color: rgba(255, 255, 255, 1);
 }
 
-.copy-btn.is-copied:hover { background: #279b61; }
+.copy-btn.is-copied:hover { background: white; }
 
-/* Trust note */
+/* Trust note — plain centered text, coral name */
 .trust-note {
   max-width: 760px;
   margin: 0 auto;
-  padding: 1.5rem 1.75rem;
-  background: var(--bg-card);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
+  padding: 0 1rem;
   font-size: 1.02rem;
   line-height: 1.7;
   color: var(--text);
-  box-shadow: var(--shadow-sm);
+  text-align: center;
 }
 
 .trust-note strong {
-  color: var(--accent);
+  color: var(--coral);
   font-weight: 700;
 }
 
