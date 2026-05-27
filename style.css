@@ -760,21 +760,39 @@ a:hover { color: var(--accent-dark); }
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 10px 28px rgba(30, 163, 160, 0.4);
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
   -webkit-tap-highlight-color: transparent;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  animation: heartbeatCenter 2.2s ease-in-out infinite;
 }
 
 .floating-cards-btn:hover {
   background: var(--teal-dark);
+  box-shadow: 0 14px 32px rgba(30, 163, 160, 0.55);
+  animation-play-state: paused;
   transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 14px 32px rgba(30, 163, 160, 0.5);
 }
 
 .floating-cards-btn:active {
   transform: translateX(-50%) translateY(-1px);
+  animation-play-state: paused;
+}
+
+@keyframes heartbeatCenter {
+  0%, 28%, 42%, 100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 10px 28px rgba(30, 163, 160, 0.4);
+  }
+  14% {
+    transform: translateX(-50%) scale(1.07);
+    box-shadow: 0 14px 36px rgba(30, 163, 160, 0.55);
+  }
+  35% {
+    transform: translateX(-50%) scale(1.04);
+    box-shadow: 0 12px 32px rgba(30, 163, 160, 0.48);
+  }
 }
 
 .floating-cards-btn svg {
@@ -798,16 +816,40 @@ a:hover { color: var(--accent-dark); }
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  animation: heartbeat 2.2s ease-in-out infinite;
+  animation-delay: 0.4s; /* offset so the two FABs don't beat in perfect lockstep */
 }
 
 .floating-whatsapp-btn:hover {
   background: var(--whatsapp-dark);
   transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+  animation-play-state: paused;
 }
 
 .floating-whatsapp-btn svg { width: 30px; height: 30px; }
+
+@keyframes heartbeat {
+  0%, 28%, 42%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  }
+  14% {
+    transform: scale(1.08);
+    box-shadow: 0 14px 36px rgba(37, 211, 102, 0.55);
+  }
+  35% {
+    transform: scale(1.04);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.48);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-cards-btn,
+  .floating-whatsapp-btn { animation: none; }
+}
 
 /* Mobile (< 640px): both fabs stay at bottom — cap pill width so the
    WhatsApp circle on the right has clearance. */
