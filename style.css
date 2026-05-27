@@ -192,9 +192,9 @@ a:hover { color: var(--accent-dark); }
   background-position: center top;
   background-color: var(--accent);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding-bottom: clamp(160px, 24vh, 220px);
+  padding-bottom: 0;
   overflow: hidden;
 }
 
@@ -821,10 +821,6 @@ a:hover { color: var(--accent-dark); }
   /* scroll-down chevron sits generously above the pill, never overlapping it */
   .scroll-indicator {
     bottom: calc(env(safe-area-inset-bottom, 0) + 170px);
-  }
-  /* keep hero text from running into the indicator+pill stack */
-  .hero {
-    padding-bottom: clamp(240px, 30vh, 300px);
   }
 }
 
