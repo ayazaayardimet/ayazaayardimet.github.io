@@ -589,7 +589,7 @@ a:hover { color: var(--accent-dark); }
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 0;
 }
 
 .bank-card {
@@ -635,6 +635,16 @@ a:hover { color: var(--accent-dark); }
   letter-spacing: 0.1em;
   color: #ffffff;
   user-select: all;
+}
+
+/* card owner name — distinct gold so it stands out on the teal */
+.bank-holder {
+  margin: 0.1rem 0 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #ffd479;
 }
 
 .copy-btn {
