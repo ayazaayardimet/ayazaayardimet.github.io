@@ -567,12 +567,12 @@ a:hover { color: var(--accent-dark); }
   background: var(--bg);
 }
 
-/* the whole donation block sits inside one dark green rounded panel */
+/* the whole donation block sits inside one dark teal rounded panel */
 .donation-section .section-inner {
-  background: linear-gradient(165deg, #36531d 0%, #2a4116 100%);
+  background: linear-gradient(165deg, #14716e 0%, #0c4f4d 100%);
   border-radius: 28px;
   padding: clamp(1.75rem, 4vw, 3rem);
-  box-shadow: 0 20px 50px rgba(30, 50, 15, 0.25);
+  box-shadow: 0 20px 50px rgba(12, 79, 77, 0.28);
 }
 
 /* no heart divider here; title is left-aligned and white */
@@ -664,7 +664,7 @@ a:hover { color: var(--accent-dark); }
 
 .copy-btn.is-copied {
   background: #ffffff;
-  color: #2a4116;
+  color: #0c4f4d;
   border-color: #ffffff;
 }
 
