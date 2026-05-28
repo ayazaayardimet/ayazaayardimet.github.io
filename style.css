@@ -561,160 +561,139 @@ a:hover { color: var(--accent-dark); }
 }
 
 /* ============================================================
-   DONATION
+   DONATION — dark green panel, stacked bank rows
    ============================================================ */
 .donation-section {
-  background: linear-gradient(180deg, var(--bg) 0%, #e0f3ef 100%);
+  background: var(--bg);
 }
 
-.donation-subtitle {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin: -1.25rem 0 2.25rem 0;
+/* the whole donation block sits inside one dark green rounded panel */
+.donation-section .section-inner {
+  background: linear-gradient(165deg, #36531d 0%, #2a4116 100%);
+  border-radius: 28px;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  box-shadow: 0 20px 50px rgba(30, 50, 15, 0.25);
+}
+
+/* no heart divider here; title is left-aligned and white */
+.donation-section .section-accent { display: none; }
+
+.donation-section .section-title {
+  color: #ffffff;
+  text-align: left;
+  margin: 0 0 1.75rem 0;
 }
 
 .bank-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .bank-card {
-  position: relative;
-  background: linear-gradient(135deg, #2ebcb1 0%, #1c8a86 100%);
-  border: 0;
-  border-radius: 20px;
-  padding: 1.5rem 1.5rem 1.4rem;
-  color: white;
-  box-shadow: 0 14px 32px rgba(20, 110, 105, 0.28);
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bank-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(255,255,255,0.18) 0%, transparent 50%);
-  pointer-events: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.1rem 1.4rem;
+  color: #ffffff;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .bank-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(20, 110, 105, 0.36);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
-.bank-card-head {
-  position: relative;
-  z-index: 1;
+.bank-card-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
 }
 
 .bank-name {
   margin: 0;
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: white;
-}
-
-.bank-chip {
-  width: 38px;
-  height: 28px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #f4cf68 0%, #d4a943 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
-              0 2px 4px rgba(0, 0, 0, 0.15);
-  position: relative;
-}
-
-.bank-chip::after {
-  content: "";
-  position: absolute;
-  inset: 4px 6px;
-  border-radius: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0 5px,
-    rgba(0, 0, 0, 0.15) 5px 6px
-  );
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #ffffff;
 }
 
 .bank-number {
-  position: relative;
-  z-index: 1;
   margin: 0;
   font-family: 'IBM Plex Sans', monospace;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #ffffff;
   user-select: all;
 }
 
 .copy-btn {
-  position: relative;
-  z-index: 1;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 46px;
-  padding: 0.65rem 1.25rem;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.18);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 0.4rem;
+  min-height: 40px;
+  padding: 0.5rem 1.15rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 999px;
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
-  backdrop-filter: blur(4px);
 }
 
 .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.28);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
 }
-.copy-btn:active { transform: translateY(0); }
 
-.copy-btn svg { width: 17px; height: 17px; }
+.copy-btn svg { width: 15px; height: 15px; }
 
 .copy-btn.is-copied {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--accent-deep);
-  border-color: rgba(255, 255, 255, 1);
+  background: #ffffff;
+  color: #2a4116;
+  border-color: #ffffff;
 }
 
-.copy-btn.is-copied:hover { background: white; }
+.copy-btn.is-copied:hover { background: #ffffff; }
 
-/* Trust note — plain centered text, coral name */
+/* Trust note — inside the green panel, soft light text */
 .trust-note {
   max-width: 760px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  font-size: 1.02rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--text);
-  text-align: center;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: left;
 }
 
 .trust-note strong {
-  color: var(--coral);
+  color: #ffffff;
   font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  /* stack copy button under the number on narrow phones */
+  .bank-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .copy-btn { width: 100%; }
 }
 
 /* ============================================================
