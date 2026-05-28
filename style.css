@@ -647,6 +647,11 @@ a:hover { color: var(--accent-dark); }
   color: #ffd479;
 }
 
+.holder-rel {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 500;
+}
+
 .copy-btn {
   flex-shrink: 0;
   display: inline-flex;
