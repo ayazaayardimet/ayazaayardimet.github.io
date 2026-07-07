@@ -164,6 +164,15 @@
     },
   };
 
+  // v2 redesign: extra keys merged into the base translations
+  const extra = {
+    az: { navStory:'Hekayə', navGallery:'Şəkillər', navDocs:'Sənədlər', heroBadge:'Xeyriyyə kampaniyası', heroText:'Ayaz 4 yaşındadır. Serebral iflic diaqnozu ilə mübarizə aparır və yenidən ayağa qalxması üçün davamlı reabilitasiya müalicəsinə ehtiyacı var. Sizin dəstəyiniz onun gələcəyini dəyişə bilər.', heroCta:'Dəstək ol', heroCta2:'WhatsApp ilə əlaqə', heroFloat:'Hər dəstək bir addımdır', chipAge:'4 yaşında', chipDiagnosis:'Serebral iflic (USİ)', chipNeed:'Reabilitasiya ehtiyacı', storyEyebrow:'Hekayə', medicalEyebrow:'Tibbi məlumat', galleryEyebrow:'Qalereya', docsEyebrow:'Şəffaflıq', helpEyebrow:'Dəstək', helpTitle:'Necə kömək edə bilərsiniz?', step1Title:'Kartı seçin', step1Text:'Aşağıdakı bank kartlarından sizə uyğun olanı seçin.', step2Title:'Nömrəni kopyalayın', step2Text:'"Kopyala" düyməsi ilə kart nömrəsini bir toxunuşla kopyalayın.', step3Title:'Köçürmə edin', step3Text:'Bank tətbiqinizdən istənilən məbləği köçürün — hər dəstək dəyərlidir.', donationEyebrow:'Bank kartları', donationSubtitle:'Bütün kartlar Ayazın ailəsinə məxsusdur — yardımlar birbaşa müalicəyə yönəlir.', relGrandma:'(nənə)', relMother:'(ana)', footerNote:'Bu sayt balaca Ayaza dəstək üçün ailəsi tərəfindən yaradılıb.' },
+    tr: { navStory:'Hikaye', navGallery:'Fotoğraflar', navDocs:'Belgeler', heroBadge:'Yardım kampanyası', heroText:'Ayaz 4 yaşında. Serebral palsi tanısıyla mücadele ediyor ve yeniden ayağa kalkması için sürekli rehabilitasyon tedavisine ihtiyacı var. Desteğiniz onun geleceğini değiştirebilir.', heroCta:'Destek ol', heroCta2:'WhatsApp ile iletişim', heroFloat:'Her destek bir adımdır', chipAge:'4 yaşında', chipDiagnosis:'Serebral palsi (CP)', chipNeed:'Rehabilitasyon ihtiyacı', storyEyebrow:'Hikaye', medicalEyebrow:'Tıbbi bilgi', galleryEyebrow:'Galeri', docsEyebrow:'Şeffaflık', helpEyebrow:'Destek', helpTitle:'Nasıl yardım edebilirsiniz?', step1Title:'Kartı seçin', step1Text:'Aşağıdaki banka kartlarından size uygun olanı seçin.', step2Title:'Numarayı kopyalayın', step2Text:'"Kopyala" düğmesiyle kart numarasını tek dokunuşla kopyalayın.', step3Title:'Transfer yapın', step3Text:'Banka uygulamanızdan dilediğiniz tutarı gönderin — her destek değerlidir.', donationEyebrow:'Banka kartları', donationSubtitle:'Tüm kartlar Ayaz\'ın ailesine aittir — yardımlar doğrudan tedaviye gider.', relGrandma:'(anneanne)', relMother:'(anne)', footerNote:'Bu site küçük Ayaz\'a destek için ailesi tarafından oluşturuldu.' },
+    ru: { navStory:'История', navGallery:'Фото', navDocs:'Документы', heroBadge:'Благотворительная кампания', heroText:'Аязу 4 года. Он борется с диагнозом ДЦП, и ему нужна постоянная реабилитация, чтобы снова встать на ноги. Ваша поддержка может изменить его будущее.', heroCta:'Помочь', heroCta2:'Связаться в WhatsApp', heroFloat:'Каждая помощь — это шаг', chipAge:'4 года', chipDiagnosis:'ДЦП', chipNeed:'Нужна реабилитация', storyEyebrow:'История', medicalEyebrow:'Медицинская информация', galleryEyebrow:'Галерея', docsEyebrow:'Прозрачность', helpEyebrow:'Поддержка', helpTitle:'Как вы можете помочь?', step1Title:'Выберите карту', step1Text:'Выберите подходящую банковскую карту из списка ниже.', step2Title:'Скопируйте номер', step2Text:'Кнопка «Копировать» скопирует номер карты одним касанием.', step3Title:'Сделайте перевод', step3Text:'Переведите любую сумму через приложение банка — важна любая помощь.', donationEyebrow:'Банковские карты', donationSubtitle:'Все карты принадлежат семье Аяза — помощь идёт напрямую на лечение.', relGrandma:'(бабушка)', relMother:'(мама)', footerNote:'Этот сайт создан семьёй маленького Аяза для его поддержки.' },
+    en: { navStory:'Story', navGallery:'Photos', navDocs:'Documents', heroBadge:'Charity campaign', heroText:'Ayaz is 4 years old. He is fighting cerebral palsy and needs continuous rehabilitation therapy to stand on his feet again. Your support can change his future.', heroCta:'Donate', heroCta2:'Contact on WhatsApp', heroFloat:'Every gift is a step', chipAge:'4 years old', chipDiagnosis:'Cerebral palsy (CP)', chipNeed:'Needs rehabilitation', storyEyebrow:'Story', medicalEyebrow:'Medical info', galleryEyebrow:'Gallery', docsEyebrow:'Transparency', helpEyebrow:'Support', helpTitle:'How can you help?', step1Title:'Pick a card', step1Text:'Choose the bank card that suits you from the list below.', step2Title:'Copy the number', step2Text:'The "Copy" button copies the card number in one tap.', step3Title:'Make a transfer', step3Text:'Send any amount from your banking app — every bit counts.', donationEyebrow:'Bank cards', donationSubtitle:'All cards belong to Ayaz\'s family — donations go directly to his treatment.', relGrandma:'(grandmother)', relMother:'(mother)', footerNote:'This site was created by little Ayaz\'s family to support him.' },
+  };
+  Object.keys(extra).forEach((l) => Object.assign(translations[l], extra[l]));
+
   /* ----------------------------------------------------------
      2. STATE
      ---------------------------------------------------------- */
@@ -308,14 +317,30 @@
       lightboxHistoryPushed = false;
     }
 
-    // Wire up every thumb (gallery photos AND documents).
-    document.querySelectorAll('[data-src]').forEach((el) => {
-      el.addEventListener('click', () => {
-        const src = el.getAttribute('data-src');
-        const img = el.querySelector('img');
-        const alt = img ? img.alt : '';
-        openLightbox(src, alt);
-      });
+    // Wire up every thumb (gallery photos AND documents) with prev/next nav.
+    const thumbs = Array.from(document.querySelectorAll('[data-src]'));
+    let current = 0;
+
+    function showIndex(i) {
+      current = (i + thumbs.length) % thumbs.length;
+      const el = thumbs[current];
+      const img = el.querySelector('img');
+      openLightbox(el.getAttribute('data-src'), img ? img.alt : '');
+    }
+
+    thumbs.forEach((el, i) => {
+      el.addEventListener('click', () => showIndex(i));
+    });
+
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showIndex(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showIndex(current + 1); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'ArrowLeft') showIndex(current - 1);
+      if (e.key === 'ArrowRight') showIndex(current + 1);
     });
 
     closeBtn.addEventListener('click', () => closeLightbox());
