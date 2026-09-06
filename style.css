@@ -790,9 +790,8 @@ section[id] { scroll-margin-top: 84px; }
 
 .bank-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 1.5rem;
-  max-width: 1080px;
+  max-width: 440px;
   margin: 0 auto;
 }
 
@@ -826,8 +825,6 @@ section[id] { scroll-margin-top: 84px; }
 
 /* per-bank brand gradients */
 .bank-kapital { background: linear-gradient(135deg, #d0313f 0%, #8f1626 100%); }
-.bank-abb     { background: linear-gradient(135deg, #1b5faa 0%, #0d3468 100%); }
-.bank-leo     { background: linear-gradient(135deg, #33343c 0%, #17181d 100%); }
 
 .bank-card-top {
   display: flex;
@@ -844,8 +841,6 @@ section[id] { scroll-margin-top: 84px; }
   letter-spacing: 0.02em;
   color: #ffffff;
 }
-
-.bank-leo .bank-name { color: #ffd23f; }
 
 .bank-chip {
   margin: 1.1rem 0 auto;
