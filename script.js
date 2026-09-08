@@ -29,7 +29,7 @@
       treatmentText:
         'Ayazın daimi və bahalı reabilitasiya müalicəsinə ehtiyacı var — əzələ gərginliyini azaltmaq, onun ayağa qalxmasına və hərəkət etməsinə kömək etmək üçün.',
       contactTitle: 'Ailə / Əlaqə',
-      motherLabel: 'Ana',
+      fatherLabel: 'Ata',
       addressLabel: 'Ünvan',
       addressText: 'Xırdalan şəhəri, AAAF Park, 25-ci küçə, bina 5, ev 13',
       phoneLabel: 'Telefon',
@@ -43,8 +43,6 @@
       donationTitle: 'Yardım üçün bank kartı',
       copyBtn: 'Kopyala',
       copiedBtn: 'Kopyalandı',
-      trustNote:
-        'Hər üç kart ailənin özünə — <strong>Leyla Gözəlovaya</strong> aiddir və yalnız onun şəxsi nəzarətindədir. Bütün yardımlar birbaşa Ayazın müalicəsi üçün ailənin özünə çatır.',
 
       cardsBtn: 'Karta bax',
     },
@@ -67,7 +65,7 @@
       treatmentText:
         'Ayaz\'ın sürekli ve pahalı rehabilitasyon tedavisine ihtiyacı var — kas gerginliğini azaltmak, ayağa kalkmasına ve hareket etmesine yardımcı olmak için.',
       contactTitle: 'Aile / İletişim',
-      motherLabel: 'Anne',
+      fatherLabel: 'Baba',
       addressLabel: 'Adres',
       addressText: 'Xırdalan şehri, AAAF Park, 25. sokak, bina 5, daire 13',
       phoneLabel: 'Telefon',
@@ -81,8 +79,6 @@
       donationTitle: 'Yardım için banka kartı',
       copyBtn: 'Kopyala',
       copiedBtn: 'Kopyalandı',
-      trustNote:
-        'Üç kartın tamamı ailenin kendisine — <strong>Leyla Gözəlova\'ya</strong> aittir ve yalnızca onun kişisel kontrolündedir. Tüm yardımlar doğrudan Ayaz\'ın tedavisi için ailesine ulaşır.',
 
       cardsBtn: 'Karta bak',
     },
@@ -105,7 +101,7 @@
       treatmentText:
         'Аязу необходима постоянная и дорогостоящая реабилитационная терапия — чтобы снять мышечное напряжение, помочь ему встать на ноги и двигаться.',
       contactTitle: 'Семья / Контакты',
-      motherLabel: 'Мама',
+      fatherLabel: 'Папа',
       addressLabel: 'Адрес',
       addressText: 'г. Хырдалан, AAAF Park, 25-я улица, дом 5, кв. 13',
       phoneLabel: 'Телефон',
@@ -119,8 +115,6 @@
       donationTitle: 'Банковская карта для помощи',
       copyBtn: 'Копировать',
       copiedBtn: 'Скопировано',
-      trustNote:
-        'Все три карты принадлежат самой семье — <strong>Лейле Гёзаловой</strong> — и находятся исключительно под её личным контролем. Все пожертвования напрямую поступают семье на лечение Аяза.',
 
       cardsBtn: 'Карта помощи',
     },
@@ -143,7 +137,7 @@
       treatmentText:
         'Ayaz needs continuous and costly rehabilitation therapy — to ease his muscle tension and help him stand and move on his own.',
       contactTitle: 'Family / Contact',
-      motherLabel: 'Mother',
+      fatherLabel: 'Father',
       addressLabel: 'Address',
       addressText: 'Khirdalan, AAAF Park, 25th street, building 5, apt 13',
       phoneLabel: 'Phone',
@@ -157,8 +151,6 @@
       donationTitle: 'Bank card for donation',
       copyBtn: 'Copy',
       copiedBtn: 'Copied',
-      trustNote:
-        'All three cards belong to the family itself — to <strong>Leyla Gözəlova</strong> — and are under her personal control alone. Every donation goes directly to the family for Ayaz\'s treatment.',
 
       cardsBtn: 'See the card',
     },
