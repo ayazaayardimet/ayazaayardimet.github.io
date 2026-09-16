@@ -790,8 +790,9 @@ section[id] { scroll-margin-top: 84px; }
 
 .bank-cards {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 1.5rem;
-  max-width: 440px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
@@ -825,6 +826,7 @@ section[id] { scroll-margin-top: 84px; }
 
 /* per-bank brand gradients */
 .bank-kapital { background: linear-gradient(135deg, #d0313f 0%, #8f1626 100%); }
+.bank-abb     { background: linear-gradient(135deg, #1b5faa 0%, #0d3468 100%); }
 
 .bank-card-top {
   display: flex;
