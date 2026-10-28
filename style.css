@@ -226,6 +226,43 @@ section[id] { scroll-margin-top: 84px; }
   .hero-inner { grid-template-columns: 1.05fr 0.95fr; }
 }
 
+/* Days counter — paid days left, number only. Deliberately neutral: it is a
+   billing marker, not part of the campaign, so it carries no progress or
+   urgency cue a visitor could read as a donation deadline. */
+.hero-days {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2.25rem);
+  right: clamp(1.25rem, 4vw, 2.5rem);
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: clamp(44px, 5vw, 54px);
+  height: clamp(44px, 5vw, 54px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
+  animation: hero-days-in 0.5s ease both;
+}
+
+.hero-days-num {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-days.is-urgent .hero-days-num { color: #a63f28; }
+
+@keyframes hero-days-in {
+  from { opacity: 0; transform: scale(0.82); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -473,6 +510,7 @@ section[id] { scroll-margin-top: 84px; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-float-card { animation: none; }
+  .hero-days { animation: none; }
 }
 
 /* ============================================================
