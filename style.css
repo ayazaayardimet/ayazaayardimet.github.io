@@ -475,7 +475,6 @@ section[id] { scroll-margin-top: 84px; }
   margin-bottom: 0.6rem;
 }
 
-.eyebrow-light { color: var(--gold); }
 
 .section-title {
   font-family: var(--font-serif);
@@ -750,150 +749,123 @@ section[id] { scroll-margin-top: 84px; }
 }
 
 /* ============================================================
-   DONATION — deep panel with credit-card-style bank cards
+   DONATION — two clean rows, one per bank card
    ============================================================ */
-.donation-section {
-  background:
-    radial-gradient(70% 60% at 90% 0%, rgba(242, 178, 92, 0.12) 0%, transparent 60%),
-    radial-gradient(60% 55% at 0% 100%, rgba(226, 109, 92, 0.10) 0%, transparent 60%),
-    linear-gradient(160deg, var(--teal-dark) 0%, var(--teal-deep) 100%);
-}
-
-.donation-head .section-title { color: #ffffff; }
-.donation-head .section-caption { color: rgba(255, 255, 255, 0.75); }
+.donation-section { background: var(--bg-alt); }
 
 .bank-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1.5rem;
-  max-width: 760px;
+  gap: 1rem;
+  max-width: 680px;
   margin: 0 auto;
 }
 
-/* credit-card look */
 .bank-card {
   position: relative;
   display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  padding: 1.5rem 1.6rem 1.4rem;
-  min-height: 200px;
-  color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.4rem 1.5rem 1.4rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .bank-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.36);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
-/* subtle sheen across every card */
+/* thin brand-colour edge on the left */
 .bank-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 55%);
-  pointer-events: none;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--bank, var(--teal));
 }
 
-/* per-bank brand gradients */
-.bank-kapital { background: linear-gradient(135deg, #d0313f 0%, #8f1626 100%); }
-.bank-abb     { background: linear-gradient(135deg, #1b5faa 0%, #0d3468 100%); }
+.bank-kapital { --bank: #d0313f; }
+.bank-abb     { --bank: #1b5faa; }
 
-.bank-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
+.bank-info { min-width: 0; }
 
 .bank-name {
-  margin: 0;
+  margin: 0 0 0.35rem;
   font-family: var(--font-sans);
+  font-size: 0.8rem;
   font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  color: #ffffff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bank, var(--teal));
 }
-
-.bank-chip {
-  margin: 1.1rem 0 auto;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.bank-chip svg { width: 38px; height: 27px; }
 
 .bank-number {
-  margin: 0.9rem 0 0.35rem;
+  margin: 0 0 0.3rem;
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
-  font-size: clamp(1.12rem, 2.4vw, 1.35rem);
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  color: #ffffff;
+  font-size: clamp(1.15rem, 3.2vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink);
   user-select: all;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .bank-holder {
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.92);
-  text-transform: uppercase;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-muted);
 }
 
 .holder-rel {
-  color: rgba(255, 255, 255, 0.65);
   font-weight: 500;
-  text-transform: none;
+  opacity: 0.8;
 }
 
 .copy-btn {
-  position: relative;
-  z-index: 1;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  min-height: 38px;
-  padding: 0.45rem 1.05rem;
-  background: rgba(255, 255, 255, 0.14);
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.55rem 1.25rem;
+  background: var(--teal);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 0;
   border-radius: 999px;
-  font-size: 0.86rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.copy-btn:hover {
-  background: rgba(255, 255, 255, 0.26);
-  border-color: rgba(255, 255, 255, 0.7);
-}
+.copy-btn:hover { background: var(--teal-dark); }
 
-.copy-btn svg { width: 14px; height: 14px; }
+.copy-btn svg { width: 15px; height: 15px; }
 
 .copy-btn.is-copied {
-  background: #ffffff;
-  color: var(--teal-deep);
-  border-color: #ffffff;
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+  box-shadow: inset 0 0 0 1.5px var(--teal);
 }
 
-.copy-btn.is-copied:hover { background: #ffffff; }
+.copy-btn.is-copied:hover { background: var(--teal-soft); }
 
-@media (max-width: 420px) {
-  .copy-btn { padding: 0.42rem 0.85rem; font-size: 0.8rem; }
-  .bank-card { padding: 1.3rem 1.25rem 1.2rem; min-height: 185px; }
+@media (max-width: 560px) {
+  .bank-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.3rem 1.25rem 1.25rem 1.5rem;
+  }
+  .copy-btn { width: 100%; }
 }
 
 /* ============================================================
